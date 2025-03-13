@@ -2,8 +2,6 @@ services:
   model_backend:
     build: ./model_backend
     container_name: mnist-model-backend
-    ports:
-      - "8000:8000"
     depends_on:
       - mnist-db
     networks:
@@ -31,8 +29,6 @@ services:
       POSTGRES_USER: mnist
       POSTGRES_PASSWORD: mnist
       POSTGRES_DB: mnist
-    ports:
-      - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./postgres_db/init.sql:/docker-entrypoint-initdb.d/init.sql
