@@ -1,0 +1,20 @@
+model:
+  backbone:
+    input_channels: 1
+    initial_channels: 16
+    res_blocks:
+      - out_channels: 32
+        stride: 1
+      - out_channels: 64
+        stride: 2
+      - out_channels: 128
+        stride: 2
+  head:
+      num_classes: 10
+dataset:
+  train_batch_size: 32
+  test_batch_size: 32
+optimiser:
+  lr: 0.001
+training:
+  epochs: 3
